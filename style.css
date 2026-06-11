@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #020412;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    cursor: none; /* Menyembunyikan kursor asli untuk kustom pointer */
+}
+
+/* 3D Background Canvas */
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Berada di belakang konten */
+}
+
+/* Efek Pointer Menyala */
+.cursor-glow {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, rgba(255, 215, 0, 0) 70%);
+    pointer-events: none; /* Agar tidak menghalangi klik */
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    mix-blend-mode: screen;
+    transition: width 0.2s, height 0.2s;
+}
+
+/* Navigasi */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(2, 4, 18, 0.5);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700; /* Warna emas saat di-hover */
+}   
+
+/* Sections Umum */
+.section {
+    min-height: 100vh;
+    padding: 100px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Typography & Glassmorphism Panels */
+h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ffd700;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Section */
+.hero {
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #ffd700;
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #cccccc;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    color: #020412;
+    background-color: #ffd700;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffd700;
+    border: 1px solid #ffd700;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.btn-outline:hover {
+    background: #ffd700;
+    color: #020412;
+}
+
+/* Projects Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+}
+
+.project-item h3 {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+/* Contact & Footer */
+.contact-panel {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-links {
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    color: #888;
+}
+
+/* Efek kursor membesar saat hover link */
+a:hover ~ .cursor-glow {
+    width: 60px;
+    height: 60px;
+}
